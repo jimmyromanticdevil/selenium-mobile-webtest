@@ -52,7 +52,7 @@ def start_test(url):
             "mobileEmulation", {"deviceName": i})
         driver = webdriver.Chrome(
             executable_path='../driver/chromedriver',
-            chrome_options=chrome_options)
+            options=chrome_options)
 
         driver.get(url)
         time.sleep(5)
@@ -68,4 +68,4 @@ if __name__ == "__main__":
         required=True,
         help="Please input url to test")
     args = vars(parser.parse_args())
-    start_test(url)
+    start_test(args['url'])
